@@ -17,7 +17,7 @@ public class CategoryDAOIml implements CategoryDAO, DataSource {
         Category category;
         CallableStatement call;
         try {
-            call = connection.prepareCall("{ call sp_getAllCategory() }");
+            call = connection.prepareCall("{ call sp_getAllCategories() }");
             ResultSet rs = call.executeQuery();
             categoryList = new ArrayList<>();
             while (rs.next()) {
