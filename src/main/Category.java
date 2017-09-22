@@ -1,33 +1,37 @@
 package main;
 
 public class Category {
-	private int id;
-	private String name;
+    private int id;
+    private String title;
 
-	public Category(int id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+    public Category(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Category() {
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	@Override
-	public String toString() {
-		return "Catelogy [name=" + name + ", id=" + id + "]";
-	}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Catelogy [title=" + title + ", id=" + id + "]";
+    }
 
 }
