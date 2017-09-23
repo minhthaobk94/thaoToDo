@@ -6,13 +6,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        CategoryDAOIml categoryDAO = new CategoryDAOIml();
-        Category category = new Category();
-        if (categoryDAO.getConnection() != null) {
+        TodoDAOIml todoDAOIml = new TodoDAOIml();
+        Category category = new Category(11, "try it");
+        Todo todo = new Todo(1, category);
+        if (todoDAOIml.getConnection() != null) {
             System.out.println("ok");
         }
-        int i = categoryDAO.addCategory(new Category(4, "ilu"));
-        System.out.println(i);
-        categoryDAO.closeConnection();
+        System.out.println(todoDAOIml.deleteTodo(1));
     }
 }

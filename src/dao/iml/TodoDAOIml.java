@@ -1,5 +1,9 @@
 package main;
 
+import bean.Todo;
+import dao.CategoryDAO;
+import dao.TodoDAO;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
