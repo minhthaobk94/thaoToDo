@@ -1,4 +1,6 @@
-package main;
+package dao;
+
+import bean.Category;
 
 import java.util.List;
 

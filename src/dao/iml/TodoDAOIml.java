@@ -1,8 +1,9 @@
-package main;
+package dao.iml;
 
 import bean.Todo;
 import dao.CategoryDAO;
 import dao.TodoDAO;
+import dao.DataSource;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -87,13 +88,13 @@ public class TodoDAOIml implements TodoDAO, DataSource {
     }
 
     @Override
-    public int addTodo(int catId, Todo todo) {
+    public int addTodo(Todo todo) {
         CategoryDAOIml categoryDAOIml = null;
         CallableStatement call;
         int numOfAffectedRows = 0;
         try {
             call = connection.prepareCall("{ call sp_addTodo(?, ?)}");
-            call.setInt(1, catId);
+            call.setInt(1, todo.getCatelogy().getId());
             call.setString(2, todo.getTitle());
             numOfAffectedRows = call.executeUpdate();
         } catch (SQLException e) {

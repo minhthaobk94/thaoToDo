@@ -1,4 +1,4 @@
-package main;
+package bean;
 
 public class Category {
     private int id;

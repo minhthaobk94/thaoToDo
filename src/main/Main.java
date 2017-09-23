@@ -1,7 +1,8 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
+import bean.Category;
+import bean.Todo;
+import dao.iml.TodoDAOIml;
 
 public class Main {
 
@@ -12,6 +13,6 @@ public class Main {
         if (todoDAOIml.getConnection() != null) {
             System.out.println("ok");
         }
-        System.out.println(todoDAOIml.deleteTodo(1));
+        System.out.println(todoDAOIml.deleteTodo(6));
     }
 }

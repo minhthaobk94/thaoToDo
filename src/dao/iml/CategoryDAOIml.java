@@ -1,7 +1,8 @@
-package main;
+package dao.iml;
 
 import bean.Category;
 import dao.CategoryDAO;
+import dao.DataSource;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package main;
+package bean;
 
 public class Todo {
     private int id;
