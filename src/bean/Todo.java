@@ -2,14 +2,14 @@ package bean;
 
 public class Todo {
     private int id;
-    private Category catelogy;
+    private Category category;
     private String title;
 
 
-    public Todo(int id, Category catelogy, String title) {
+    public Todo(int id, Category category, String title) {
         this.id = id;
         this.title = title;
-        this.catelogy = catelogy;
+        this.category = category;
     }
 
     public Todo() {
@@ -27,7 +27,7 @@ public class Todo {
 
     public Todo(int id, Category category) {
         this.id = id;
-        this.catelogy = category;
+        this.category = category;
     }
 
     public int getId() {
@@ -46,17 +46,17 @@ public class Todo {
         this.title = title;
     }
 
-    public Category getCatelogy() {
-        return catelogy;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCatelogy(Category catelogy) {
-        this.catelogy = catelogy;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
     public String toString() {
-        return "Todo [id=" + id + ", title=" + title + ", catelogy=" + catelogy + "]";
+        return "Todo [id=" + id + ", title=" + title + ", category=" + category + "]";
     }
 
 }
