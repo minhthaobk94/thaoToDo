@@ -55,7 +55,7 @@ public class TodoDAOIml implements TodoDAO, DataSource {
                 todo = new Todo();
                 CategoryDAO categoryDAO = new CategoryDAOIml();
                 todo.setId(rs.getInt(1));
-                todo.setCatelogy(categoryDAO.getCategory(rs.getInt(2)));
+                todo.setCategory(categoryDAO.getCategory(rs.getInt(2)));
                 todo.setTitle(rs.getString(3));
                 todoList.add(todo);
             }
@@ -78,7 +78,7 @@ public class TodoDAOIml implements TodoDAO, DataSource {
                 categoryDAO = new CategoryDAOIml();
                 todo = new Todo();
                 todo.setId(rs.getInt(1));
-                todo.setCatelogy(categoryDAO.getCategory(rs.getInt(2)));
+                todo.setCategory(categoryDAO.getCategory(rs.getInt(2)));
                 todo.setTitle(rs.getString(3));
             }
         } catch (SQLException e) {
@@ -94,7 +94,7 @@ public class TodoDAOIml implements TodoDAO, DataSource {
         int numOfAffectedRows = 0;
         try {
             call = connection.prepareCall("{ call sp_addTodo(?, ?)}");
-            call.setInt(1, todo.getCatelogy().getId());
+            call.setInt(1, todo.getCategory().getId());
             call.setString(2, todo.getTitle());
             numOfAffectedRows = call.executeUpdate();
         } catch (SQLException e) {
@@ -125,7 +125,7 @@ public class TodoDAOIml implements TodoDAO, DataSource {
         try {
             call = connection.prepareCall("{call sp_updateCatId(?, ?)}");
             call.setInt(1, todo.getId());
-            call.setInt(2, todo.getCatelogy().getId());
+            call.setInt(2, todo.getCategory().getId());
             numOfAffectedRows = call.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
